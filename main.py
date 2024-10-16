@@ -91,16 +91,13 @@ def bancodedados():
                         randomtemp = uniform(19.0, 32.0)
                         randommaturacao = uniform(0.01, 1.00)
                         randomagua = randint(15000, 20000)
-                        randomph = randint(0, 14)
+                        randomph = randint(1, 14)
                         randommes = randint(1, 12)
                         randomano = randint(2024, 2050)
                         cana = randint(0, 3)
                         # Monta a instrução SQL de cadastro em uma string
                         cadastro = f""" INSERT INTO agro (tipo_cana, mes, ano, temperatura, agua, indice_maturacao, valor_ph)
-                        VALUES ('{tipoCana[cana]}', {randommes}, {randomano}, {randomtemp:.3f
-                        f"{randomagua},"
-                        f"{randommaturacao:.3f},"
-                        f"{randomph}\n")}) """
+                        VALUES ('{tipoCana[cana]}', {randommes}, {randomano}, {randomtemp:.3f}, {randomagua}, {randommaturacao}, {randomph})"""
                         print(randomtemp, randommaturacao, randomagua, randomph, randommes, randomano, cana)
                         # Executa e grava o Registro na Tabela
                         inst_cadastro.execute(cadastro)
