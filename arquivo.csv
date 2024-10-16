@@ -1,0 +1,13 @@
+tipo_cana, mes, ano, temperatura, agua, indice_maturacao, valor_ph
+Cana_de_ano_e_meio,10,20,19.5,26485,0,0
+Cana_de_ano_e_meio,11,20,21.212,18153,0.396,5
+Cana_de_ano_e_meio,12,20,24.977,15355,0.756,0
+Cana_de_ano_e_meio,1,21,30.451,16381,0.882,2
+Cana_de_ano_e_meio,2,21,27.201,18007,0.736,2
+Cana_de_ano_e_meio,3,21,23.574,19321,0.797,5
+Cana_de_ano_e_meio,4,21,24.813,15856,0.423,7
+Cana_de_ano_e_meio,5,21,29.252,16535,0.167,4
+Cana_de_ano_e_meio,6,21,23.877,18677,0.564,14
+Cana_de_ano_e_meio,7,21,21.511,19579,0.824,4
+Cana_de_ano_e_meio,8,21,27.294,18196,0.023,6
+Cana_de_ano_e_meio,9,21,31.640,16941,0.028,14
