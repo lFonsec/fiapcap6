@@ -42,6 +42,34 @@ def bancodedados():
         conexao = True
     while conexao:
 
+
+        """
+    BATCH_SIZE = 10000
+
+    with conn.cursor() as cursor:
+
+        # Predefine the memory areas to match the table definition.
+        # This can improve performance by avoiding memory reallocations.
+        # Here, one parameter is passed for each of the columns.
+        # "None" is used for the ID column, since the size of NUMBER isn't
+        # variable.  The "25" matches the maximum expected data size for the
+        # NAME column
+        cursor.setinputsizes(None, 25,255,255,255,255)
+
+        with open(FILE_NAME, 'r') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            sql = "insert into test (tipoc_cana, mes,ano,temperatura,agua,indice_maturacao,valor_ph) values (:1, :2, :4, :5, :6, :7)"
+            data = []
+            for line in csv_reader:
+                data.append((line[0], line[1]))
+                if len(data) % BATCH_SIZE == 0:
+                    cursor.executemany(sql, data)
+                    data = []
+            if data:
+                cursor.executemany(sql, data)
+            connection.commit()
+        """
+
         os.system('cls')
         print("---MENU DO BANCO DE DADOS---\n")
         while True:
@@ -59,7 +87,7 @@ def bancodedados():
                 if opcao2 == 1:
                     try:
                         print("----- GERAR ALEATORIO -----\n")
-                        # Recebe os valores para cadastro
+                        # gera os valores para cadastro
                         randomtemp = uniform(19.0, 32.0)
                         randommaturacao = uniform(0.01, 1.00)
                         randomagua = randint(15000, 20000)
@@ -231,6 +259,7 @@ def canameioano():
           f"litros de agua ao todo durante a plantação, sendo 5000 litros diarios em media ")
     indice = perguntaindicematuracao()
     print(f"A colheita deve ocorrer quando o indice de maturacao for igual a 1, o indice da plantaçao atual é: {indice}")
+    # faz uma lista com as variaveis da cana para pode enviar para a funcao imprimir
     variaveiscana.append(mes)
     variaveiscana.append(ano)
     variaveiscana.append(float(input("Qual foi a temperatura durante o platio? ")))
@@ -254,6 +283,7 @@ def canaano():
           f"litros de agua ao todo durante a plantação, sendo 5000 litros diarios")
     indice = perguntaindicematuracao()
     print(f"A colheita deve ocorrer quando o indice de maturacao for igual a 1, o indice da plantaçao atual é: {indice}")
+    # faz uma lista com as variaveis da cana para pode enviar para a funcao imprimir
     variaveiscana.append(mes)
     variaveiscana.append(ano)
     variaveiscana.append(float(input("Qual foi a temperatura durante o platio? ")))
@@ -275,6 +305,7 @@ def canasoca():
           f"litros de agua ao todo durante a plantação, sendo 5000 litros diarios")
     indice = perguntaindicematuracao()
     print(f"A colheita deve ocorrer quando o indice de maturacao for igual a 1, o indice da plantaçao atual é: {indice}")
+    # faz uma lista com as variaveis da cana para pode enviar para a funcao imprimir
     variaveiscana.append(mes)
     variaveiscana.append(ano)
     variaveiscana.append(float(input("Qual foi a temperatura durante o platio? ")))
@@ -296,6 +327,7 @@ def canainverno():
           f"litros de agua ao todo durante a plantação, sendo 5000 litros diarios")
     indice = perguntaindicematuracao()
     print(f"A colheita deve ocorrer quando o indice de maturacao for igual a 1, o indice da plantaçao atual é: {indice}")
+    # faz uma lista com as variaveis da cana para pode enviar para a funcao imprimir
     variaveiscana.append(mes)
     variaveiscana.append(ano)
     variaveiscana.append(float(input("Qual foi a temperatura durante o platio? ")))
